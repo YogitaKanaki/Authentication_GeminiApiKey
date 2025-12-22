@@ -42,7 +42,7 @@ public class AiService {
             // Call Gemini API
             response = client.models.generateContent("gemini-2.5-flash", prompt, null).text();
         } catch (Exception e) {
-            // Handle API errors gracefully
+            // Handle API errors 
             response = "Error while calling Gemini API: " + e.getMessage();
         }
 
@@ -57,13 +57,12 @@ public class AiService {
         } catch (Exception e) {
             System.err.println("Warning: failed to save chat history: " + e.getMessage());
         }
-
-
         return response;
     }
 
     public List<ChatHistory> getChatHistory(String username) {
         return repo.findByUsername(username);
     }
+
 
 }

@@ -26,7 +26,15 @@ dependencies {
 	// Spring AI (Gemini supported)
 	implementation 'org.springframework.ai:spring-ai-google-genai:1.1.2'
 
+	// jwt dependency
+	implementation("io.jsonwebtoken:jjwt-api:0.12.6")
+
 	runtimeOnly 'org.postgresql:postgresql'
+	// jwt implementation
+	runtimeOnly("io.jsonwebtoken:jjwt-impl:0.12.6")
+
+	// jackson convertor
+	runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.12.6")
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-security-test'

@@ -1,22 +1,22 @@
 package com.example.securityandapi.config;
 
 
+import com.example.securityandapi.filter.JwtFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -25,6 +25,9 @@ public class SecurityConfig {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private JwtFilter jwtFilter;
+
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -32,20 +35,25 @@ public class SecurityConfig {
         //this is called build a pattern
         return http
                 .csrf(customizer->customizer.disable())
-                .authorizeHttpRequests(request->request.anyRequest().authenticated())
+                .authorizeHttpRequests(request->request
+                        .requestMatchers("register","login")
+                        .permitAll()
+                        .anyRequest().authenticated())//to authenticate api's
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session->session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)).build();
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+                .build();
 
 
-//        http.csrf(customizer->customizer.disable()); //to disable the csrf token
+
+    }
+//       http.csrf(customizer->customizer.disable()); //to disable the csrf token
 //        http.authorizeHttpRequests(request->request.anyRequest().authenticated());  //so nobody can access the page without the authentication
 //        http.formLogin(Customizer.withDefaults());
 //        http.httpBasic(Customizer.withDefaults()); //for postman
 //        http.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)); //it creates new seesionId everytime we refresh but to use the formlogin ui we have comment the formbasic
 //        return http.build();
-    }
-
     //this is to change the authentication provider
     @Bean
     //this is interface so we need class obj
@@ -54,6 +62,13 @@ public class SecurityConfig {
         DaoAuthenticationProvider provider=new DaoAuthenticationProvider(userDetailsService);
         provider.setPasswordEncoder(new BCryptPasswordEncoder(10)); //to verify the password
         return provider;
+    }
+
+    @Bean
+    //getting the hold on authentication manager to talk to auth-provider
+    //since this is an interface we have to use auth-config to create the object and pass it
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+        return config.getAuthenticationManager();  //this will give an object
     }
 
 //    @Bean

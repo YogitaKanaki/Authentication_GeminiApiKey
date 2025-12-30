@@ -2,6 +2,8 @@ package com.example.securityandapi.service;
 
 import com.example.securityandapi.model.Users;
 import com.example.securityandapi.repository.UserRepo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -23,19 +25,33 @@ public class UserService {
 
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10); //strength means rounds of hashing
 
-    public Users register(Users user){
-        user.setPassword(encoder.encode(user.getPassword()));
-        return repo.save(user);  //to save data in database
+    private static final Logger logger =
+            LoggerFactory.getLogger(UserService.class);
 
+    public Users register(Users user) {
+        logger.info("Registering user: {}", user.getUsername());
+        user.setPassword(encoder.encode(user.getPassword()));
+        return repo.save(user);
     }
 
-    public String verify(Users user){
-        Authentication authentication=
-                authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(),user.getPassword()));
-        if(authentication.isAuthenticated())
-            return jwtService.generateToken(user.getUsername());
+    public String verify(Users user) {
+        try {
+            Authentication auth =
+                    authenticationManager.authenticate(
+                            new UsernamePasswordAuthenticationToken(
+                                    user.getUsername(), user.getPassword()
+                            )
+                    );
 
+            if (auth.isAuthenticated()) {
+                logger.info("Login successful: {}", user.getUsername());
+                return jwtService.generateToken(user.getUsername());
+            }
+        } catch (Exception e) {
+            logger.error("Authentication failed for user: {}", user.getUsername(), e);
+        }
         return "Fail";
     }
-
 }
+
+

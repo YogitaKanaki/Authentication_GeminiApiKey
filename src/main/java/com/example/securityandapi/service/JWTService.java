@@ -4,6 +4,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import javax.crypto.KeyGenerator;
@@ -18,14 +20,20 @@ import java.util.function.Function;
 @Service
 public class JWTService {
 
-    private String secretKey="";
+    private static final Logger logger =
+            LoggerFactory.getLogger(JWTService.class);
 
-    public JWTService(){
+    private String secretKey = "";
+
+    public JWTService() {
         try {
-            KeyGenerator keyGen=KeyGenerator.getInstance("HmacSHA256");
-            SecretKey sk=keyGen.generateKey();
+            KeyGenerator keyGen = KeyGenerator.getInstance("HmacSHA256");
+            SecretKey sk = keyGen.generateKey();
             secretKey = Base64.getEncoder().encodeToString(sk.getEncoded());
+
+            logger.info("JWT secret key generated");
         } catch (NoSuchAlgorithmException e) {
+            logger.error("Failed to generate JWT key", e);
             throw new RuntimeException(e);
         }
     }

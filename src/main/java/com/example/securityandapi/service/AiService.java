@@ -3,6 +3,8 @@ package com.example.securityandapi.service;
 import com.example.securityandapi.model.ChatHistory;
 import com.example.securityandapi.repository.ChatHistoryRepo;
 import com.google.genai.Client;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -15,16 +17,20 @@ public class AiService {
     private final ChatHistoryRepo repo;
     private final Client client;
 
+    private static final Logger logger =
+            LoggerFactory.getLogger(AiService.class);
+
 
     public AiService(ChatHistoryRepo repo,
                      @Value("${gemini.api-key:}") String apiKey) {
         this.repo = repo;
 
         if (apiKey == null || apiKey.isEmpty()) {
-            System.err.println("WARNING: Gemini API key is missing. Client will not be initialized!");
-            this.client = null; // client is null if API key is missing
+            logger.warn("Gemini API key is missing. Client not initialized.");
+            this.client = null;
         } else {
             this.client = Client.builder().apiKey(apiKey).build();
+            logger.info("Gemini client initialized successfully.");
         }
     }
 
@@ -32,18 +38,20 @@ public class AiService {
     //asks gemini api for response
     public String askGemini(String prompt, String username) {
 
-        //  If client is not initialized, return error message
         if (client == null) {
-            return "Gemini client is not initialized. Please provide a valid API key.";
+            logger.error("Gemini client is null. Username: {}", username);
+            return "Gemini client is not initialized.";
         }
 
         String response;
         try {
-            // Call Gemini API
-            response = client.models.generateContent("gemini-2.5-flash", prompt, null).text();
+            logger.info("Calling Gemini API for user: {}", username);
+            response = client.models
+                    .generateContent("gemini-2.5-flash", prompt, null)
+                    .text();
         } catch (Exception e) {
-            // Handle API errors 
-            response = "Error while calling Gemini API: " + e.getMessage();
+            logger.error("Gemini API call failed", e);
+            response = "Error while calling Gemini API";
         }
 
         //  Save prompt & response to database
@@ -54,9 +62,12 @@ public class AiService {
             history.setUsername(username);
             history.setTimestamp(LocalDateTime.now());
             repo.save(history);
+
+            logger.info("Chat history saved for user: {}", username);
         } catch (Exception e) {
-            System.err.println("Warning: failed to save chat history: " + e.getMessage());
+            logger.error("Failed to save chat history", e);
         }
+
         return response;
     }
 

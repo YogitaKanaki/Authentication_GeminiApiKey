@@ -2,7 +2,10 @@ package com.example.securityandapi.service;
 
 import com.example.securityandapi.model.Users;
 import com.example.securityandapi.repository.UserRepo;
-import org.slf4j.Logger;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -25,8 +28,8 @@ public class UserService {
 
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10); //strength means rounds of hashing
 
-    private static final Logger logger =
-            LoggerFactory.getLogger(UserService.class);
+
+    private static final Logger logger = (Logger) LogManager.getLogger(UserService.class);
 
     public Users register(Users user) {
         logger.info("Registering user: {}", user.getUsername());

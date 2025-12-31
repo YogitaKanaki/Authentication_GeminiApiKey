@@ -3,7 +3,10 @@ package com.example.securityandapi.service;
 import com.example.securityandapi.model.UserPrincipal;
 import com.example.securityandapi.model.Users;
 import com.example.securityandapi.repository.UserRepo;
-import org.slf4j.Logger;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,8 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class MyUserDetailsService implements UserDetailsService {
 
-    private static final Logger logger =
-            LoggerFactory.getLogger(MyUserDetailsService.class);
+
+    private static final Logger logger = (Logger) LogManager.getLogger(MyUserDetailsService.class);
 
     @Autowired
     private UserRepo repo;

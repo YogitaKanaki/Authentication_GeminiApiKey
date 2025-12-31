@@ -19,26 +19,42 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
-	// Spring AI (Gemini supported)
-	implementation 'org.springframework.ai:spring-ai-google-genai:1.1.2'
+	// -------------------- CORE SPRING --------------------
+	implementation("org.springframework.boot:spring-boot-starter-web") {
+		exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
+	}
 
-	// jwt dependency
+	implementation("org.springframework.boot:spring-boot-starter-security") {
+		exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
+	}
+
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa") {
+		exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
+	}
+
+	// -------------------- LOGGING (ONLY LOG4J2) --------------------
+	implementation("org.springframework.boot:spring-boot-starter-log4j2") {
+		exclude group: "org.apache.logging.log4j", module: "log4j-to-slf4j"
+	}
+
+	// -------------------- SPRING AI (GEMINI) --------------------
+	implementation("org.springframework.ai:spring-ai-google-genai:1.1.2")
+
+	// -------------------- JWT --------------------
 	implementation("io.jsonwebtoken:jjwt-api:0.12.6")
-
-	runtimeOnly 'org.postgresql:postgresql'
-	// jwt implementation
 	runtimeOnly("io.jsonwebtoken:jjwt-impl:0.12.6")
-
-	// jackson convertor
 	runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.12.6")
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-security-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
+	// -------------------- DATABASE --------------------
+	runtimeOnly("org.postgresql:postgresql")
+
+	// -------------------- DEV --------------------
+	developmentOnly("org.springframework.boot:spring-boot-devtools")
+
+	// -------------------- TEST --------------------
+	testImplementation("org.springframework.boot:spring-boot-starter-security-test")
+	testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
 }
 
 tasks.named('test') {

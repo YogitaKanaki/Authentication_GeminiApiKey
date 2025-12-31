@@ -4,8 +4,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import javax.crypto.KeyGenerator;
@@ -20,8 +20,7 @@ import java.util.function.Function;
 @Service
 public class JWTService {
 
-    private static final Logger logger =
-            LoggerFactory.getLogger(JWTService.class);
+    private static final Logger logger = (Logger) LogManager.getLogger(JWTService.class);
 
     private String secretKey = "";
 

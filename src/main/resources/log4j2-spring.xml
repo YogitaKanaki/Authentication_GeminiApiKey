@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Properties>
+        <!-- Log folder -->
+        <Property name="LOG_PATH">logs</Property>
+
+        <!-- Log pattern -->
+        <Property name="LOG_PATTERN">
+            %d{yyyy-MM-dd HH:mm:ss} %-5level %c{1} - %msg%n
+        </Property>
+    </Properties>
+
+    <Appenders>
+
+        <!-- Daily Rolling File Appender -->
+        <RollingFile
+                name="DailyFile"
+                fileName="${LOG_PATH}/application.log"
+                filePattern="${LOG_PATH}/application-%d{dd-MM-yyyy}.log">
+
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+
+            <Policies>
+                <!-- Roll file every day -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+
+        </RollingFile>
+
+
+    </Appenders>
+
+    <Loggers>
+
+        <!-- Root logger -->
+        <Root level="info">
+            <AppenderRef ref="DailyFile"/>
+            <AppenderRef ref="Console"/>
+        </Root>
+
+    </Loggers>
+
+</Configuration>

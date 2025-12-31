@@ -3,8 +3,8 @@ package com.example.securityandapi.service;
 import com.example.securityandapi.model.ChatHistory;
 import com.example.securityandapi.repository.ChatHistoryRepo;
 import com.google.genai.Client;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +17,7 @@ public class AiService {
     private final ChatHistoryRepo repo;
     private final Client client;
 
-    private static final Logger logger =
-            LoggerFactory.getLogger(AiService.class);
+    private static final Logger logger = (Logger) LogManager.getLogger(AiService.class);
 
 
     public AiService(ChatHistoryRepo repo,

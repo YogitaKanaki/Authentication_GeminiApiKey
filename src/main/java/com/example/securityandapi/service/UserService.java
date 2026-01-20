@@ -2,17 +2,17 @@ package com.example.securityandapi.service;
 
 import com.example.securityandapi.model.Users;
 import com.example.securityandapi.repository.UserRepo;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.security.authentication.BadCredentialsException;
+
+import java.time.LocalDateTime;
 
 @Service
 public class UserService {
@@ -37,24 +37,76 @@ public class UserService {
         return repo.save(user);
     }
 
-    public String verify(Users user) {
-        try {
-            Authentication auth =
-                    authenticationManager.authenticate(
-                            new UsernamePasswordAuthenticationToken(
-                                    user.getUsername(), user.getPassword()
-                            )
-                    );
 
-            if (auth.isAuthenticated()) {
-                logger.info("Login successful: {}", user.getUsername());
-                return jwtService.generateToken(user.getUsername());
-            }
-        } catch (Exception e) {
-            logger.error("Authentication failed for user: {}", user.getUsername(), e);
+
+    public String verify(Users user) {
+
+        Users dbUser = repo.findByUsername(user.getUsername());
+
+        if (dbUser == null) {
+            logger.warn("Login attempt for non-existing user: {}", user.getUsername());
+            return "Invalid username or password";
         }
-        return "Fail";
+
+        // 🔓 Auto-unlock after 1 hour
+        if (dbUser.getLockUntil() != null &&
+                dbUser.getLockUntil().isBefore(LocalDateTime.now())) {
+
+            dbUser.setLockUntil(null);
+            dbUser.setFailedAttempts(0);
+            repo.save(dbUser);
+
+            logger.info("User {} automatically unlocked after lock period",
+                    user.getUsername());
+        }
+
+        // 🔒 Check if still locked
+        if (dbUser.getLockUntil() != null) {
+            logger.warn("Blocked login attempt for user {}",
+                    user.getUsername());
+
+            return "Login failed 3 times. Account blocked for 1 hour.";
+        }
+
+        try {
+            Authentication auth = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            user.getUsername(), user.getPassword()
+                    )
+            );
+
+            // ✅ Successful login
+            dbUser.setFailedAttempts(0);
+            dbUser.setLockUntil(null);
+            repo.save(dbUser);
+
+            logger.info("Login successful: {}", user.getUsername());
+            return jwtService.generateToken(user.getUsername());
+
+        } catch (BadCredentialsException e) {
+
+            int attempts = dbUser.getFailedAttempts() + 1;
+            dbUser.setFailedAttempts(attempts);
+
+            logger.warn("Login failed for user {} (attempt {})",
+                    user.getUsername(), attempts);
+
+            // 🔐 Lock exactly on 3rd failure
+            if (attempts >= 3) {
+                dbUser.setLockUntil(LocalDateTime.now().plusHours(1));
+                repo.save(dbUser);
+
+                logger.error("User {} blocked for 1 hour due to 3 failed attempts",
+                        user.getUsername());
+
+                return "Login failed 3 times. Account blocked for 1 hour.";
+            }
+
+            repo.save(dbUser);
+            return "Invalid username or password";
+        }
     }
+
 }
 
 

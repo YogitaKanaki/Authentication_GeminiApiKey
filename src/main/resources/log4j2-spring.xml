@@ -7,11 +7,16 @@
 
         <!-- Log pattern -->
         <Property name="LOG_PATTERN">
-            %d{yyyy-MM-dd HH:mm:ss} %-5level %c{1} - %msg%n
+            %d{yyyy-MM-dd HH:mm:ss} %-5level %c{1} - [IP:%X{clientIp}] %msg%n
         </Property>
     </Properties>
 
     <Appenders>
+
+        <!-- ✅ Console Appender (ADDED) -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
 
         <!-- Daily Rolling File Appender -->
         <RollingFile
@@ -27,7 +32,6 @@
             </Policies>
 
         </RollingFile>
-
 
     </Appenders>
 

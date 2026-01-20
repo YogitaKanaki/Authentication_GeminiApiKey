@@ -48,7 +48,7 @@ public class UserService {
             return "Invalid username or password";
         }
 
-        // 🔓 Auto-unlock after 1 hour
+        //  Auto-unlock after 1 hour
         if (dbUser.getLockUntil() != null &&
                 dbUser.getLockUntil().isBefore(LocalDateTime.now())) {
 
@@ -75,7 +75,7 @@ public class UserService {
                     )
             );
 
-            // ✅ Successful login
+            //  Successful login
             dbUser.setFailedAttempts(0);
             dbUser.setLockUntil(null);
             repo.save(dbUser);
@@ -91,8 +91,8 @@ public class UserService {
             logger.warn("Login failed for user {} (attempt {})",
                     user.getUsername(), attempts);
 
-            // 🔐 Lock exactly on 3rd failure
-            if (attempts >= 3) {
+            //  Lock exactly after 3rd failure
+            if (attempts > 3) {
                 dbUser.setLockUntil(LocalDateTime.now().plusHours(1));
                 repo.save(dbUser);
 

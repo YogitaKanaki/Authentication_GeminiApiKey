@@ -38,7 +38,6 @@ public class UserService {
     }
 
 
-
     public String verify(Users user) {
 
         Users dbUser = repo.findByUsername(user.getUsername());
@@ -47,6 +46,7 @@ public class UserService {
             logger.warn("Login attempt for non-existing user: {}", user.getUsername());
             return "Invalid username or password";
         }
+
 
         //  Auto-unlock after 1 hour
         if (dbUser.getLockUntil() != null &&
@@ -60,7 +60,7 @@ public class UserService {
                     user.getUsername());
         }
 
-        // 🔒 Check if still locked
+        //  Check if still locked
         if (dbUser.getLockUntil() != null) {
             logger.warn("Blocked login attempt for user {}",
                     user.getUsername());
@@ -91,7 +91,7 @@ public class UserService {
             logger.warn("Login failed for user {} (attempt {})",
                     user.getUsername(), attempts);
 
-            //  Lock exactly after 3rd failure
+            //  Lock after 3rd failure
             if (attempts > 3) {
                 dbUser.setLockUntil(LocalDateTime.now().plusHours(1));
                 repo.save(dbUser);
@@ -101,6 +101,7 @@ public class UserService {
 
                 return "Login failed 3 times. Account blocked for 1 hour.";
             }
+            
 
             repo.save(dbUser);
             return "Invalid username or password";
@@ -108,5 +109,6 @@ public class UserService {
     }
 
 }
+
 
 

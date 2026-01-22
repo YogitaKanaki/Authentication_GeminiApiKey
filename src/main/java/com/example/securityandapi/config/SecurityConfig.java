@@ -28,6 +28,12 @@ public class SecurityConfig {
     @Autowired
     private JwtFilter jwtFilter;
 
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -36,7 +42,11 @@ public class SecurityConfig {
         return http
                 .csrf(customizer->customizer.disable())
                 .authorizeHttpRequests(request->request
-                        .requestMatchers("register","login")
+                        .requestMatchers("register",
+                                "login",
+                                "auth/forgot-password",
+                                "/auth/reset-password",
+                                "/error")
                         .permitAll()
                         .anyRequest().authenticated())//to authenticate api's
                 .httpBasic(Customizer.withDefaults())

@@ -15,6 +15,16 @@ public class Users {
     private String username;
     private String password;
 
+    public String getFavorite_teacher() {
+        return favorite_teacher;
+    }
+
+    public void setFavorite_teacher(String favorite_teacher) {
+        this.favorite_teacher = favorite_teacher;
+    }
+
+    private String favorite_teacher;
+
     // 🔐 security fields
     private int failedAttempts;
 

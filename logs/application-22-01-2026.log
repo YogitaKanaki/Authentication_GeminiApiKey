@@ -1,0 +1,673 @@
+2026-01-22 10:23:28 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 23624 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 10:23:28 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 10:23:28 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 10:23:28 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 10:23:29 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 10:23:29 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 239 ms. Found 3 JPA repository interfaces.
+2026-01-22 10:23:30 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 10:23:30 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 10:23:30 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 10:23:30 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 10:23:30 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 10:23:30 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 2451 ms
+2026-01-22 10:23:30 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 10:23:31 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 10:23:31 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 10:23:31 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 10:23:31 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 10:23:31 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 10:23:31 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@175b01a1
+2026-01-22 10:23:31 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 10:23:31 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 10:23:33 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 10:23:33 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 10:23:33 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 10:23:33 WARN  AnnotationConfigServletWebServerApplicationContext - [IP:] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'passwordResetController': Unsatisfied dependency expressed through field 'service': Error creating bean with name 'passwordResetService': Unsatisfied dependency expressed through field 'encoder': No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2026-01-22 10:23:33 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 10:23:33 INFO  HikariDataSource - [IP:] HikariPool-1 - Shutdown initiated...
+2026-01-22 10:23:33 INFO  HikariDataSource - [IP:] HikariPool-1 - Shutdown completed.
+2026-01-22 10:23:33 INFO  StandardService - [IP:] Stopping service [Tomcat]
+2026-01-22 10:23:33 INFO  ConditionEvaluationReportLogger - [IP:] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-22 10:23:33 ERROR LoggingFailureAnalysisReporter - [IP:] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field encoder in com.example.securityandapi.service.PasswordResetService required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
+2026-01-22 10:27:05 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 11640 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 10:27:05 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 10:27:05 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 10:27:05 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 10:27:06 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 10:27:06 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 168 ms. Found 3 JPA repository interfaces.
+2026-01-22 10:27:07 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 10:27:07 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 10:27:07 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 10:27:07 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 10:27:07 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 10:27:07 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 2017 ms
+2026-01-22 10:27:07 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 10:27:07 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 10:27:08 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 10:27:08 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 10:27:08 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 10:27:08 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 10:27:08 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2f394055
+2026-01-22 10:27:08 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 10:27:08 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 10:27:09 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 10:27:09 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 10:27:10 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 10:27:10 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 10:27:10 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 10:27:10 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 10:27:10 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [register, login] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 10:27:11 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 10:27:11 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 10:27:11 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 10:27:11 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 6.423 seconds (process running for 7.302)
+2026-01-22 10:29:29 INFO  [/] - [IP:] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 10:29:29 INFO  DispatcherServlet - [IP:] Initializing Servlet 'dispatcherServlet'
+2026-01-22 10:29:29 INFO  DispatcherServlet - [IP:] Completed initialization in 41 ms
+2026-01-22 10:34:32 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 18472 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 10:34:32 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 10:34:33 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 10:34:33 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 10:34:34 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 10:34:34 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 186 ms. Found 3 JPA repository interfaces.
+2026-01-22 10:34:35 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 10:34:35 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 10:34:35 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 10:34:35 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 10:34:35 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 10:34:35 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 2243 ms
+2026-01-22 10:34:35 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 10:34:35 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 10:34:35 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 10:34:35 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 10:34:36 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 10:34:36 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 10:34:36 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6fdf42c3
+2026-01-22 10:34:36 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 10:34:36 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 10:34:37 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 10:34:37 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 10:34:38 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 10:34:38 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 10:34:38 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 10:34:38 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 10:34:38 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [register, login, auth/forgot-password, /auth/reset-password, /error] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 10:34:39 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 10:34:39 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 10:34:39 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 10:34:39 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 6.717 seconds (process running for 7.654)
+2026-01-22 10:34:49 INFO  [/] - [IP:] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 10:34:49 INFO  DispatcherServlet - [IP:] Initializing Servlet 'dispatcherServlet'
+2026-01-22 10:34:49 INFO  DispatcherServlet - [IP:] Completed initialization in 2 ms
+2026-01-22 10:34:50 WARN  PasswordResetService - [IP:0:0:0:0:0:0:0:1] Forgot password attempt for invalid user from IP 0:0:0:0:0:0:0:1
+2026-01-22 10:42:43 WARN  PasswordResetService - [IP:0:0:0:0:0:0:0:1] Forgot password attempt for invalid user from IP 0:0:0:0:0:0:0:1
+2026-01-22 10:56:25 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 24816 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 10:56:25 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 10:56:26 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 10:56:26 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 10:56:27 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 10:56:27 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 186 ms. Found 3 JPA repository interfaces.
+2026-01-22 10:56:28 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 10:56:28 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 10:56:28 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 10:56:28 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 10:56:28 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 10:56:28 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 2225 ms
+2026-01-22 10:56:28 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 10:56:28 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 10:56:28 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 10:56:28 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 10:56:29 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 10:56:29 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 10:56:29 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6822cab5
+2026-01-22 10:56:29 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 10:56:29 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 10:56:30 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 10:56:30 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 10:56:30 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 10:56:30 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 10:56:30 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 10:56:30 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 10:56:31 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [register, login, auth/forgot-password, /auth/reset-password, /error] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 10:56:31 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 10:56:31 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 10:56:31 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 10:56:31 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 6.361 seconds (process running for 7.151)
+2026-01-22 10:56:39 INFO  [/] - [IP:] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 10:56:39 INFO  DispatcherServlet - [IP:] Initializing Servlet 'dispatcherServlet'
+2026-01-22 10:56:39 INFO  DispatcherServlet - [IP:] Completed initialization in 1 ms
+2026-01-22 10:56:39 WARN  PasswordResetService - [IP:0:0:0:0:0:0:0:1] Forgot password attempt for invalid user from IP 0:0:0:0:0:0:0:1
+2026-01-22 11:15:15 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 13368 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 11:15:15 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 11:15:15 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 11:15:15 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 11:15:16 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 11:15:16 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 125 ms. Found 3 JPA repository interfaces.
+2026-01-22 11:15:16 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 11:15:17 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 11:15:17 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 11:15:17 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 11:15:17 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 11:15:17 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 1891 ms
+2026-01-22 11:15:17 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 11:15:17 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 11:15:17 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 11:15:17 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 11:15:17 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 11:15:17 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 11:15:17 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@193cce91
+2026-01-22 11:15:17 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 11:15:18 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 11:15:18 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 11:15:19 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 11:15:19 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 11:15:19 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 11:15:19 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 11:15:19 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 11:15:20 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [register, login, auth/forgot-password, /auth/reset-password, /error] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 11:15:20 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 11:15:20 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 11:15:20 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 11:15:20 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 5.729 seconds (process running for 6.391)
+2026-01-22 11:15:25 INFO  [/] - [IP:] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 11:15:25 INFO  DispatcherServlet - [IP:] Initializing Servlet 'dispatcherServlet'
+2026-01-22 11:15:25 INFO  DispatcherServlet - [IP:] Completed initialization in 3 ms
+2026-01-22 11:15:26 WARN  PasswordResetService - [IP:0:0:0:0:0:0:0:1] Forgot password attempt for invalid user from IP 0:0:0:0:0:0:0:1
+2026-01-22 11:17:17 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 6496 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 11:17:17 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 11:17:17 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 11:17:17 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 11:17:18 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 11:17:18 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 108 ms. Found 3 JPA repository interfaces.
+2026-01-22 11:17:19 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 11:17:19 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 11:17:19 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 11:17:19 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 11:17:19 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 11:17:19 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 1629 ms
+2026-01-22 11:17:19 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 11:17:19 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 11:17:19 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 11:17:19 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 11:17:19 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 11:17:19 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 11:17:20 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4da314c
+2026-01-22 11:17:20 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 11:17:20 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 11:17:21 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 11:17:21 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 11:17:21 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 11:17:21 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 11:17:21 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 11:17:21 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 11:17:21 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [register, login, auth/forgot-password, /auth/reset-password, /error] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 11:17:22 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 11:17:22 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 11:17:22 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 11:17:22 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 5.026 seconds (process running for 5.803)
+2026-01-22 11:17:28 INFO  [/] - [IP:] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 11:17:28 INFO  DispatcherServlet - [IP:] Initializing Servlet 'dispatcherServlet'
+2026-01-22 11:17:28 INFO  DispatcherServlet - [IP:] Completed initialization in 1 ms
+2026-01-22 11:17:29 INFO  PasswordResetService - [IP:0:0:0:0:0:0:0:1] Password reset requested for user yogita from IP 0:0:0:0:0:0:0:1
+2026-01-22 11:21:20 INFO  PasswordResetService - [IP:0:0:0:0:0:0:0:1] Password reset requested for user souji from IP 0:0:0:0:0:0:0:1
+2026-01-22 11:24:06 INFO  PasswordResetService - [IP:0:0:0:0:0:0:0:1] Password reset successful for user souji
+2026-01-22 11:24:46 INFO  PasswordResetService - [IP:0:0:0:0:0:0:0:1] Password reset successful for user yogita
+2026-01-22 11:25:24 INFO  MyUserDetailsService - [IP:0:0:0:0:0:0:0:1] User authenticated: yogita
+2026-01-22 11:25:24 WARN  UserService - [IP:0:0:0:0:0:0:0:1] Login failed for user yogita (attempt 1)
+2026-01-22 11:25:30 INFO  MyUserDetailsService - [IP:0:0:0:0:0:0:0:1] User authenticated: yogita
+2026-01-22 11:25:30 INFO  UserService - [IP:0:0:0:0:0:0:0:1] Login successful: yogita
+2026-01-22 11:44:23 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 24676 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 11:44:23 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 11:44:23 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 11:44:23 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 11:44:24 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 11:44:25 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 186 ms. Found 3 JPA repository interfaces.
+2026-01-22 11:44:25 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 11:44:25 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 11:44:25 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 11:44:25 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 11:44:25 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 11:44:25 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 1894 ms
+2026-01-22 11:44:25 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 11:44:26 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 11:44:26 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 11:44:26 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 11:44:26 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 11:44:26 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 11:44:26 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5626fba2
+2026-01-22 11:44:26 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 11:44:26 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 11:44:27 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 11:44:27 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 11:44:28 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 11:44:28 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 11:44:28 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 11:44:28 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 11:44:29 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [register, login, auth/forgot-password, /auth/reset-password, /error] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 11:44:29 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 11:44:29 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 11:44:29 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 11:44:29 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 6.003 seconds (process running for 6.705)
+2026-01-22 12:06:08 WARN  HikariPool - [IP:] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m11s662ms790µs700ns).
+2026-01-22 12:47:45 WARN  HikariPool - [IP:] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m34s956ms302µs400ns).
+2026-01-22 13:01:45 WARN  HikariPool - [IP:] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m30s683ms198µs400ns).
+2026-01-22 13:24:57 WARN  HikariPool - [IP:] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m41s336ms395µs600ns).
+2026-01-22 14:24:44 WARN  HikariPool - [IP:] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47m16s704ms819µs400ns).
+2026-01-22 15:38:08 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 24848 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 15:38:08 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 15:38:08 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 15:38:08 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 15:38:09 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 15:38:09 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 219 ms. Found 3 JPA repository interfaces.
+2026-01-22 15:38:10 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 15:38:10 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 15:38:10 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 15:38:10 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 15:38:10 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 15:38:10 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 2339 ms
+2026-01-22 15:38:10 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 15:38:11 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 15:38:11 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 15:38:11 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 15:38:11 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 15:38:11 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 15:38:12 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ceb535d
+2026-01-22 15:38:12 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 15:38:12 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 15:38:13 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 15:38:13 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 15:38:14 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 15:38:14 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 15:38:14 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 15:38:14 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 15:38:14 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [register, login, auth/forgot-password, /auth/reset-password, /error] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 15:38:15 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 15:38:15 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 15:38:15 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 15:38:15 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 7.518 seconds (process running for 8.361)
+2026-01-22 15:38:53 INFO  [/] - [IP:] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 15:38:53 INFO  DispatcherServlet - [IP:] Initializing Servlet 'dispatcherServlet'
+2026-01-22 15:38:53 INFO  DispatcherServlet - [IP:] Completed initialization in 10 ms
+2026-01-22 15:43:24 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 15816 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 15:43:24 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 15:43:25 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 15:43:25 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 15:43:25 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 15:43:26 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 161 ms. Found 3 JPA repository interfaces.
+2026-01-22 15:43:26 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 15:43:27 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 15:43:27 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 15:43:27 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 15:43:27 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 15:43:27 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 1990 ms
+2026-01-22 15:43:27 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 15:43:27 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 15:43:27 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 15:43:27 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 15:43:27 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 15:43:27 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 15:43:28 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@be49286
+2026-01-22 15:43:28 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 15:43:28 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 15:43:29 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 15:43:29 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 15:43:29 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 15:43:30 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 15:43:30 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 15:43:30 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 15:43:30 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [register, login, auth/forgot-password, /auth/reset-password, /auth/verify-answer, /error] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 15:43:30 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 15:43:30 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 15:43:30 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 15:43:30 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 6.307 seconds (process running for 7.07)
+2026-01-22 15:43:40 INFO  [/] - [IP:] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 15:43:40 INFO  DispatcherServlet - [IP:] Initializing Servlet 'dispatcherServlet'
+2026-01-22 15:43:40 INFO  DispatcherServlet - [IP:] Completed initialization in 1 ms
+2026-01-22 15:43:41 WARN  BCryptPasswordEncoder - [IP:0:0:0:0:0:0:0:1] Encoded password does not look like BCrypt
+2026-01-22 15:44:05 WARN  BCryptPasswordEncoder - [IP:0:0:0:0:0:0:0:1] Encoded password does not look like BCrypt
+2026-01-22 16:07:41 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 18364 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 16:07:41 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 16:07:41 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 16:07:41 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 16:07:42 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 16:07:42 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 158 ms. Found 3 JPA repository interfaces.
+2026-01-22 16:07:43 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 16:07:43 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 16:07:43 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 16:07:43 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 16:07:43 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 16:07:43 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 1937 ms
+2026-01-22 16:07:43 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 16:07:43 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 16:07:43 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 16:07:43 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 16:07:43 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 16:07:43 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 16:07:44 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7c812ff1
+2026-01-22 16:07:44 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 16:07:44 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 16:07:45 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 16:07:45 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 16:07:45 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 16:07:45 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 16:07:45 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 16:07:45 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 16:07:46 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [register, login, auth/forgot-password, /auth/reset-password, /auth/verify-answer, /error] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 16:07:46 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 16:07:46 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 16:07:46 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 16:07:46 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 5.897 seconds (process running for 6.659)
+2026-01-22 16:07:56 INFO  [/] - [IP:] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 16:07:56 INFO  DispatcherServlet - [IP:] Initializing Servlet 'dispatcherServlet'
+2026-01-22 16:07:56 INFO  DispatcherServlet - [IP:] Completed initialization in 1 ms
+2026-01-22 16:07:56 WARN  BCryptPasswordEncoder - [IP:0:0:0:0:0:0:0:1] Encoded password does not look like BCrypt
+2026-01-22 17:26:01 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 17220 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 17:26:01 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 17:26:01 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 17:26:01 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 17:26:02 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 17:26:02 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 187 ms. Found 3 JPA repository interfaces.
+2026-01-22 17:26:03 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 17:26:03 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 17:26:03 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 17:26:03 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 17:26:03 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 17:26:03 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 2112 ms
+2026-01-22 17:26:03 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 17:26:03 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 17:26:03 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 17:26:04 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 17:26:04 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 17:26:04 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 17:26:04 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6822cab5
+2026-01-22 17:26:04 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 17:26:04 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 17:26:05 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 17:26:05 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 17:26:06 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 17:26:06 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 17:26:06 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 17:26:06 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 17:26:07 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [register, login, auth/forgot-password, /auth/reset-password, /auth/verify-answer, /error] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 17:26:07 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 17:26:07 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 17:26:07 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 17:26:07 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 6.55 seconds (process running for 7.307)
+2026-01-22 17:26:20 INFO  [/] - [IP:] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 17:26:20 INFO  DispatcherServlet - [IP:] Initializing Servlet 'dispatcherServlet'
+2026-01-22 17:26:20 INFO  DispatcherServlet - [IP:] Completed initialization in 2 ms
+2026-01-22 17:26:33 WARN  BCryptPasswordEncoder - [IP:0:0:0:0:0:0:0:1] Encoded password does not look like BCrypt
+2026-01-22 17:26:34 WARN  BCryptPasswordEncoder - [IP:0:0:0:0:0:0:0:1] Encoded password does not look like BCrypt
+2026-01-22 17:28:32 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 18488 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 17:28:32 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 17:28:32 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 17:28:32 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 17:28:33 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 17:28:33 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 163 ms. Found 3 JPA repository interfaces.
+2026-01-22 17:28:34 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 17:28:34 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 17:28:34 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 17:28:34 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 17:28:34 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 17:28:34 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 2084 ms
+2026-01-22 17:28:34 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 17:28:34 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 17:28:35 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 17:28:35 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 17:28:35 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 17:28:35 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 17:28:35 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@384fb21f
+2026-01-22 17:28:35 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 17:28:35 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 17:28:36 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 17:28:36 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 17:28:37 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 17:28:37 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 17:28:37 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 17:28:37 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 17:28:37 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [register, login, auth/forgot-password, /auth/reset-password, /auth/verify-answer, /error] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 17:28:37 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 17:28:37 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 17:28:37 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 17:28:37 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 5.947 seconds (process running for 6.734)
+2026-01-22 17:28:45 INFO  [/] - [IP:] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 17:28:45 INFO  DispatcherServlet - [IP:] Initializing Servlet 'dispatcherServlet'
+2026-01-22 17:28:45 INFO  DispatcherServlet - [IP:] Completed initialization in 1 ms
+2026-01-22 17:28:45 WARN  BCryptPasswordEncoder - [IP:0:0:0:0:0:0:0:1] Encoded password does not look like BCrypt
+2026-01-22 17:28:47 WARN  BCryptPasswordEncoder - [IP:0:0:0:0:0:0:0:1] Encoded password does not look like BCrypt
+2026-01-22 17:31:28 INFO  MyUserDetailsService - [IP:] User authenticated: souji
+2026-01-22 17:33:09 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 13360 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 17:33:09 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 17:33:09 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 17:33:09 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 17:33:10 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 17:33:11 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 182 ms. Found 3 JPA repository interfaces.
+2026-01-22 17:33:12 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 17:33:12 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 17:33:12 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 17:33:12 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 17:33:12 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 17:33:12 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 2759 ms
+2026-01-22 17:33:12 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 17:33:13 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 17:33:13 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 17:33:13 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 17:33:14 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 17:33:15 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 17:33:15 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7c812ff1
+2026-01-22 17:33:15 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 17:33:15 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 17:33:16 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 17:33:16 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 17:33:17 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 17:33:17 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 17:33:17 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 17:33:17 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 17:33:17 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [/register, /login, auth/forgot-password, /auth/reset-password, /auth/verify-answer, /error] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 17:33:18 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 17:33:18 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 17:33:18 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 17:33:18 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 8.804 seconds (process running for 9.677)
+2026-01-22 17:33:23 INFO  [/] - [IP:] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 17:33:23 INFO  DispatcherServlet - [IP:] Initializing Servlet 'dispatcherServlet'
+2026-01-22 17:33:23 INFO  DispatcherServlet - [IP:] Completed initialization in 2 ms
+2026-01-22 17:33:23 INFO  MyUserDetailsService - [IP:] User authenticated: souji
+2026-01-22 17:36:30 INFO  MyUserDetailsService - [IP:] User authenticated: souji
+2026-01-22 17:37:51 INFO  UserService - [IP:0:0:0:0:0:0:0:1] Registering user: ajay
+2026-01-22 17:39:05 INFO  PasswordResetService - [IP:0:0:0:0:0:0:0:1] Security answer verified for user ajay
+2026-01-22 17:39:28 INFO  PasswordResetService - [IP:0:0:0:0:0:0:0:1] Password reset successful for user ajay
+2026-01-22 17:45:42 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 9608 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 17:45:42 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 17:45:42 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 17:45:42 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 17:45:43 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 17:45:43 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 229 ms. Found 3 JPA repository interfaces.
+2026-01-22 17:45:44 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 17:45:44 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 17:45:44 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 17:45:44 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 17:45:44 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 17:45:44 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 2309 ms
+2026-01-22 17:45:44 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 17:45:45 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 17:45:45 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 17:45:45 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 17:45:45 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 17:45:45 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 17:45:45 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4855f127
+2026-01-22 17:45:45 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 17:45:45 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 17:45:46 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 17:45:47 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 17:45:47 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 17:45:47 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 17:45:47 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 17:45:47 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 17:45:48 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [/register, /login, auth/forgot-password, /auth/reset-password, /auth/verify-answer, /error] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 17:45:48 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 17:45:48 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 17:45:48 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 17:45:48 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 6.681 seconds (process running for 7.487)
+2026-01-22 17:45:56 INFO  [/] - [IP:] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-22 17:45:56 INFO  DispatcherServlet - [IP:] Initializing Servlet 'dispatcherServlet'
+2026-01-22 17:45:56 INFO  DispatcherServlet - [IP:] Completed initialization in 2 ms
+2026-01-22 17:47:44 INFO  UserService - [IP:0:0:0:0:0:0:0:1] Registering user: souji
+2026-01-22 17:47:56 INFO  PasswordResetService - [IP:0:0:0:0:0:0:0:1] Security answer verified for user souji
+2026-01-22 17:48:21 INFO  PasswordResetService - [IP:0:0:0:0:0:0:0:1] Password reset successful for user souji
+2026-01-22 17:51:19 INFO  SecurityandapiApplication - [IP:] Starting SecurityandapiApplication using Java 25.0.3-beta with PID 6212 (C:\Users\yogit\Downloads\Gradle-Project\securityandapi\build\classes\java\main started by yogit in C:\Users\yogit\Downloads\Gradle-Project\securityandapi)
+2026-01-22 17:51:19 INFO  SecurityandapiApplication - [IP:] No active profile set, falling back to 1 default profile: "default"
+2026-01-22 17:51:19 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-01-22 17:51:19 INFO  DevToolsPropertyDefaultsPostProcessor - [IP:] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-01-22 17:51:20 INFO  RepositoryConfigurationDelegate - [IP:] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-22 17:51:20 INFO  RepositoryConfigurationDelegate - [IP:] Finished Spring Data repository scanning in 162 ms. Found 3 JPA repository interfaces.
+2026-01-22 17:51:21 INFO  TomcatWebServer - [IP:] Tomcat initialized with port 8080 (http)
+2026-01-22 17:51:21 INFO  Http11NioProtocol - [IP:] Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-22 17:51:21 INFO  StandardService - [IP:] Starting service [Tomcat]
+2026-01-22 17:51:21 INFO  StandardEngine - [IP:] Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-22 17:51:21 INFO  [/] - [IP:] Initializing Spring embedded WebApplicationContext
+2026-01-22 17:51:21 INFO  ServletWebServerApplicationContext - [IP:] Root WebApplicationContext: initialization completed in 1998 ms
+2026-01-22 17:51:21 INFO  JWTService - [IP:] JWT secret key generated
+2026-01-22 17:51:21 INFO  LogHelper - [IP:] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-22 17:51:22 INFO  Version - [IP:] HHH000412: Hibernate ORM core version 6.6.39.Final
+2026-01-22 17:51:22 INFO  RegionFactoryInitiator - [IP:] HHH000026: Second-level cache disabled
+2026-01-22 17:51:22 INFO  SpringPersistenceUnitInfo - [IP:] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-22 17:51:22 INFO  HikariDataSource - [IP:] HikariPool-1 - Starting...
+2026-01-22 17:51:22 INFO  HikariPool - [IP:] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2e603f95
+2026-01-22 17:51:22 INFO  HikariDataSource - [IP:] HikariPool-1 - Start completed.
+2026-01-22 17:51:22 INFO  pooling - [IP:] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 18.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-22 17:51:23 INFO  JtaPlatformInitiator - [IP:] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-22 17:51:23 INFO  LocalContainerEntityManagerFactoryBean - [IP:] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-22 17:51:24 INFO  AiService - [IP:] Gemini client initialized successfully.
+2026-01-22 17:51:24 INFO  InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - [IP:] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-22 17:51:24 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - [IP:] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-22 17:51:24 WARN  JpaBaseConfiguration$JpaWebConfiguration - [IP:] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-22 17:51:24 WARN  AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - [IP:] One of the patterns in [/register, /login, auth/forgot-password, /auth/reset-password, /auth/verify-answer, /error] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-22 17:51:25 INFO  OptionalLiveReloadServer - [IP:] LiveReload server is running on port 35729
+2026-01-22 17:51:25 INFO  Http11NioProtocol - [IP:] Starting ProtocolHandler ["http-nio-8080"]
+2026-01-22 17:51:25 INFO  TomcatWebServer - [IP:] Tomcat started on port 8080 (http) with context path '/'
+2026-01-22 17:51:25 INFO  SecurityandapiApplication - [IP:] Started SecurityandapiApplication in 6.191 seconds (process running for 6.982)
+2026-01-22 18:19:06 WARN  HikariPool - [IP:] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m43s887ms725µs100ns).

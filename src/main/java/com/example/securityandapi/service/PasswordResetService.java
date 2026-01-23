@@ -29,26 +29,36 @@ public class PasswordResetService {
     private static final Logger logger =
             (Logger) LogManager.getLogger(PasswordResetService.class);
 
-    // STEP 1: Forgot password
-    public String forgotPassword(String username, String ip) {
+    // STEP 0: Get security question
+    public String getSecurityQuestion(String username) {
 
-
-        username = username.trim();
-        Optional<Users> userOpt = Optional.ofNullable(userRepo.findByUsername(username));
-
-        System.out.println("Username from request = [" + username + "]");
-        System.out.println("User found in DB = " + userOpt.isPresent());
-
-        if (userOpt.isEmpty()) {
-            logger.warn("Forgot password attempt for invalid user from IP {}", ip);
-            return "If user exists, reset link will be sent";
-        }
-
-        Users user = userOpt.get();
+        Users user = userRepo.findByUsername(username.trim());
 
         if (user == null) {
-            logger.warn("Forgot password attempt for invalid user from IP {}", ip);
-            return "If user exists, reset link will be sent";
+            return "User does not exist";
+        }
+
+        return "Who is your favorite teacher?";
+    }
+
+
+    // STEP 1: Verify answer & generate token
+    public String verifyAnswerAndGenerateToken(
+            String username, String answer, String ip) {
+
+        Users user = userRepo.findByUsername(username.trim());
+
+        if (user == null) {
+            return "Invalid answer";
+        }
+
+        boolean matches = encoder.matches(
+                answer.toLowerCase().trim(),
+                user.getFavorite_teacher()
+        );
+
+        if (!matches) {
+            return "Invalid answer";
         }
 
         tokenRepo.deleteByUsername(username);
@@ -61,19 +71,13 @@ public class PasswordResetService {
         resetToken.setExpiresAt(LocalDateTime.now().plusMinutes(15));
         resetToken.setRequestIp(ip);
 
-        try {
-            tokenRepo.save(resetToken);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        tokenRepo.save(resetToken);
 
+        logger.info("Security answer verified for user {}", username);
 
-        logger.info("Password reset requested for user {} from IP {}",
-                username, ip);
-
-        // In real apps → send email
         return "Reset token: " + token;
     }
+
 
     // STEP 2: Reset password
     public String resetPassword(String token, String newPassword) {
@@ -98,8 +102,7 @@ public class PasswordResetService {
         userRepo.save(user);
         tokenRepo.delete(resetToken);
 
-        logger.info("Password reset successful for user {}",
-                user.getUsername());
+        logger.info("Password reset successful for user {}", user.getUsername());
 
         return "Password reset successful";
     }

@@ -28,9 +28,10 @@ public class SecurityConfig {
     @Autowired
     private JwtFilter jwtFilter;
 
+    //One way encryption only as the hashing is done many times here it is 10 rounds of hashing
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(10);//strength means rounds of hashing
     }
 
 
@@ -42,10 +43,13 @@ public class SecurityConfig {
         return http
                 .csrf(customizer->customizer.disable())
                 .authorizeHttpRequests(request->request
-                        .requestMatchers("register",
-                                "login",
+                        .requestMatchers("/register",
+                                "/login",
                                 "auth/forgot-password",
                                 "/auth/reset-password",
+                                "/auth/verify-answer",
+                                "/api/secure/save",
+                                "/api/secure/get/{id}",
                                 "/error")
                         .permitAll()
                         .anyRequest().authenticated())//to authenticate api's

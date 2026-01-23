@@ -16,12 +16,18 @@ public class PasswordResetController {
     private PasswordResetService service;
 
     @PostMapping("/forgot-password")
-    public String forgotPassword(
+    public String forgotPassword(@RequestParam String username) {
+        return service.getSecurityQuestion(username);
+    }
+
+    @PostMapping("/verify-answer")
+    public String verifyAnswer(
             @RequestParam String username,
+            @RequestParam String answer,
             HttpServletRequest request) {
 
-        String ip = request.getRemoteAddr();
-        return service.forgotPassword(username.trim(), ip);
+        return service.verifyAnswerAndGenerateToken(
+                username, answer, request.getRemoteAddr());
     }
 
     @PostMapping("/reset-password")

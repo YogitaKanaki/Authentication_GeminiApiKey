@@ -26,7 +26,8 @@ public class UserService {
     @Autowired
     private JWTService jwtService;
 
-    private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(10); //strength means rounds of hashing
+    @Autowired
+    private BCryptPasswordEncoder encoder;
 
 
     private static final Logger logger = (Logger) LogManager.getLogger(UserService.class);
@@ -34,6 +35,7 @@ public class UserService {
     public Users register(Users user) {
         logger.info("Registering user: {}", user.getUsername());
         user.setPassword(encoder.encode(user.getPassword()));
+        user.setFavorite_teacher(encoder.encode(user.getFavorite_teacher().toLowerCase().trim()));
         return repo.save(user);
     }
 

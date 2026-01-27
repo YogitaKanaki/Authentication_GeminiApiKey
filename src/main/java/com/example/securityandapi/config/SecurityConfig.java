@@ -50,6 +50,8 @@ public class SecurityConfig {
                                 "/auth/verify-answer",
                                 "/api/secure/save",
                                 "/api/secure/get/{id}",
+                                "/secure-json/save",
+                                "/secure-json/get/{id}",
                                 "/error")
                         .permitAll()
                         .anyRequest().authenticated())//to authenticate api's
